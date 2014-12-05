@@ -22,11 +22,7 @@ public class CreateUser {
 	
 	public CreateUser()
 	{
-<<<<<<< HEAD
 		//System.out.println("yessss it is calling");
-=======
-		System.out.println("yessss it is calling");
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 		
 		this.setUserid();
 		this.setCreated_at();	
