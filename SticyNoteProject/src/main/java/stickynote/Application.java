@@ -1,10 +1,7 @@
 package stickynote;
 
-<<<<<<< HEAD
 import java.io.File;
 import java.io.IOException;
-=======
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.List;
@@ -60,11 +57,7 @@ public class Application {
 	 DbxWebAuthNoRedirect webAuth = new DbxWebAuthNoRedirect(config, appInfo);
 	 String authorizeUrl = webAuth.start();
 	 DbxClient client;
-<<<<<<< HEAD
 	 HashMap<String,Object> clientDropboxInfo = new HashMap<String, Object>();
-=======
-	 HashMap<String,Object> clientInfo = new HashMap<String, Object>();
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 	    
 	 public static void main(String[] args) 
 	 {
@@ -75,15 +68,9 @@ public class Application {
 	 //welcome message
 	 @RequestMapping(value = "", method = RequestMethod.GET)
 	 @ResponseBody
-<<<<<<< HEAD
 	 public String welcomeMessage()
 	 {
 	   	return "Welcome to Sticky notes";    	
-=======
-	 public void welcomeMessage()
-	 {
-	   	System.out.println("Welcome to Sticky notes");    	
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 	 }
 	 	 
 	 //Creating user
@@ -126,7 +113,6 @@ public class Application {
 	    finally{cursor.close();}
 	 }
 	    
-<<<<<<< HEAD
 	 
 	 /*
 	 @RequestMapping(value ="/users/{email}/", method = RequestMethod.GET)
@@ -282,10 +268,6 @@ public class Application {
 	 
 	 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	 
-=======
-
-	  
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 	 //Create StickyNote
 	 @RequestMapping(value ="/users/{userid}/note", method = RequestMethod.POST)
 	 @ResponseBody
@@ -297,7 +279,6 @@ public class Application {
 	    try {
 	    		if(cursor.hasNext())
 	    		{	
-<<<<<<< HEAD
 	    			 if(!(clientDropboxInfo.containsKey(userid)))
 	    			 {
 	    				if(!(createNote.getAuthorizationCode().equals("")))
@@ -360,86 +341,6 @@ public class Application {
 	    	}
 	 }
 	 
-	 /*
-	 //get all user notes List 
-	 @RequestMapping(value ="/users/{userid}/note", method = RequestMethod.GET)
-	 @ResponseBody
-	 public ResponseEntity<Object> getAllNotes(@PathVariable String userid, @Valid @RequestBody GetAllNotes getAllNotes) throws UnknownHostException
-	 {
-	    coll =  DBConnection.getConnection();
-	    BasicDBObject query = new BasicDBObject("userid", userid);
-	    DBCursor cursor = coll.find(query);
-	    try {
-	    	if(cursor.hasNext())
-    		{	
-    			 if(!(clientDropboxInfo.containsKey(userid)))
-    			 {
-    				if(!(createNote.getAuthorizationCode().equals("")))
- 	    		 	{
-    				 CreateClientObject cc = new CreateClientObject();
-    				 try{
-    			        client = cc.getClientObject(createNote.getAuthorizationCode(), webAuth, config);
-    			        //System.out.println(createNote.getAuthorizationCode());
-    			        clientDropboxInfo.put(userid, client);
-    				 }catch(Exception e)
-    				 {
-    					 return new ResponseEntity<Object>(new Error(e.getMessage(), "Update authorizationCode Go to url :"+ authorizeUrl), HttpStatus.BAD_REQUEST);
-    				 }
-    			      //  System.out.println("Linked account: " + client.getAccountInfo().displayName);
-    			 
-    				createNote.setUserid(userid);
-    			 	String response = createNote.createFile(userid,(DbxClient)clientDropboxInfo.get(userid));
-    			 	if(response.equals("created"))
-    			 	{	
-    				 return new ResponseEntity<Object>(createNote, HttpStatus.CREATED);
-    			 	}
-    			 	else
-    			 	{
-    			     return new ResponseEntity<Object>(new Error(response,1), HttpStatus.BAD_REQUEST);
-    			 	}
-    			  	}
-    				else
-  	    		  	{
-  	    			return new ResponseEntity<Object>(new Error(authorizeUrl,2), HttpStatus.OK);
-  	    		  	}
-    			 }
-    			 else
-    			 {
-    				 createNote.setUserid(userid);
-    				 client = (DbxClient)clientDropboxInfo.get(userid);
-    				 
-=======
-	    		 if(!(createNote.getAuthorizationCode().equals("")))
-	    		 {
-	    			 if(!(clientInfo.containsKey(userid)))
-	    			 {
-	    				 CreateClientObject cc = new CreateClientObject();
-	    			        client = cc.getClientObject(createNote.getAuthorizationCode(), webAuth, config);
-	    			        clientInfo.put(userid, client);
-	    			        System.out.println("Linked account: " + client.getAccountInfo().displayName);
-	    			 }
-	    			 createNote.setUserid(userid);
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
-	    			 String response = createNote.createFile(userid,client);
-	    			 if(response.equals("created"))
-	    			 {	
-	    				 return new ResponseEntity<Object>(createNote, HttpStatus.CREATED);
-	    			 }
-	    			 else
-	    			 {
-	    			     return new ResponseEntity<Object>(new Error(response,1), HttpStatus.BAD_REQUEST);
-	    			 }
-<<<<<<< HEAD
-    			 }   		  
-    		  }
-    		  else
-    		  {
-    			return new ResponseEntity<Object>(new Error(userid), HttpStatus.BAD_REQUEST);
-    		  }
-	    	}
-	    finally{cursor.close();}
-	 }
-	 */
 	 
 	 
 	//get all user notes List 
@@ -490,22 +391,6 @@ public class Application {
 		   
 	 
 			 
-=======
-	    		 }
-	    		 else
-	    		 {
-	    			return new ResponseEntity<Object>(new Error(authorizeUrl,2), HttpStatus.OK);
-	    		 }
-	    		}else
-	    		{
-	    			return new ResponseEntity<Object>(new Error(userid), HttpStatus.BAD_REQUEST);
-	    		}
-	    	}
-	    finally{cursor.close();}
-	 }
-	 
-	 
->>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 	 //handling exceptions
 	 @ExceptionHandler({MethodArgumentNotValidException.class, ServletRequestBindingException.class})
 	 @ResponseStatus(HttpStatus.BAD_REQUEST)
