@@ -21,19 +21,34 @@
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="529" key="DIALOG_WIDTH"/>
 		<item value="8" key="DIALOG_Y_ORIGIN"/>
+<<<<<<< HEAD
 		<item value="427" key="DIALOG_X_ORIGIN"/>
 		<item value="695" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
+=======
+		<item value="695" key="DIALOG_HEIGHT"/>
+		<item value="427" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="quick_assist_proposal_size">
+	</section>
+>>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
 		<item value="true" key="create_unimplemented"/>
 	</section>
+<<<<<<< HEAD
 	<section name="quick_assist_proposal_size">
 	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="Comments"/>
+=======
+	<section name="SourceActionDialog.methods">
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+>>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="FinalModifier"/>
 	</section>

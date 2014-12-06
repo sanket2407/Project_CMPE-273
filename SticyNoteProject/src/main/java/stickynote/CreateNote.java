@@ -3,7 +3,10 @@ package stickynote;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+<<<<<<< HEAD
 import java.io.FileOutputStream;
+=======
+>>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -99,6 +102,7 @@ public class CreateNote {
 		            inputStream.close();
 		        }
 		        
+<<<<<<< HEAD
 		    /*    DbxEntry.WithChildren listing = client.getMetadataWithChildren("/");
 		        System.out.println("Files in the root path:");
 		        for (DbxEntry child : listing.children) {
@@ -115,6 +119,8 @@ public class CreateNote {
 		        }
 		      */  
 		        
+=======
+>>>>>>> ea02214932858ed14bc8d7738ef6276a8637f02d
 			return "created";
 		}
 		else
